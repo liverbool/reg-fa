@@ -1,5 +1,5 @@
 route_reg_master_form:
-    path: /registration
+    path: /
     methods: [GET, POST]
     defaults:
         _controller: fa.controller.reg_master:registrationAction
@@ -12,7 +12,7 @@ route_reg_master_form:
                     code: resource.code
 
 route_reg_master_thank_you:
-    path: /registration-thank-you/{code}
+    path: /thank-you/{code}
     methods: [GET]
     defaults:
         _controller: fa.controller.reg_master:thankYouAction
