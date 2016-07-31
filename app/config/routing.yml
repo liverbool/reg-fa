@@ -1,0 +1,6 @@
+fa_thailand_reg:
+    resource: "@FaThailandRegBundle/Resources/config/routing.yml"
+    prefix: /
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"

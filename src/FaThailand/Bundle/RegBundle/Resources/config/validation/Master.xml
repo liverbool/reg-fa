@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
+                                        http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
+
+    <class name="FaThailand\Bundle\RegBundle\Model\Master">
+        <property name="personals">
+            <constraint name="Valid" />
+        </property>
+        <property name="personals">
+            <constraint name="Count" >
+                <option name="min">1</option>
+                <option name="groups">default</option>
+            </constraint>
+        </property>
+        <property name="organize">
+            <constraint name="NotBlank" >
+                <option name="message">กรุณาระบุชื่อหน่วยงานของท่าน</option>
+                <option name="groups">default</option>
+            </constraint>
+        </property>
+        <property name="address">
+            <constraint name="NotBlank" >
+                <option name="message">กรุณาระบุที่อยู่หน่วยงาน</option>
+                <option name="groups">default</option>
+            </constraint>
+        </property>
+        <property name="tel">
+            <constraint name="NotBlank" >
+                <option name="message">กรุณาระบุหายเลขโทรศัพท์ในการติดต่อกลับ</option>
+                <option name="groups">default</option>
+            </constraint>
+        </property>
+        <property name="category">
+            <constraint name="NotBlank" >
+                <option name="message">กรุณาระบุประเภทหน่วยงานของท่าน</option>
+                <option name="groups">default</option>
+            </constraint>
+        </property>
+    </class>
+</constraint-mapping>

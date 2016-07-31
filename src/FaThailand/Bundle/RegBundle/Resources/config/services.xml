@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="fa_reg.image_uploader" class="FaThailand\Bundle\RegBundle\Uploader\ImageUploader">
+            <argument type="service">
+                <service class="Gaufrette\Filesystem" factory-service="knp_gaufrette.filesystem_map" factory-method="get">
+                    <argument>fa_image_file_system</argument>
+                </service>
+            </argument>
+        </service>
+
+        <service id="sylius.listener.image_upload" class="FaThailand\Bundle\RegBundle\EventListener\PersonalImageUploadListener">
+            <argument type="service" id="fa_reg.image_uploader" />
+            <tag name="doctrine.event_listener" event="prePersist" />
+            <tag name="doctrine.event_listener" event="preUpdate" />
+        </service>
+    </services>
+</container>

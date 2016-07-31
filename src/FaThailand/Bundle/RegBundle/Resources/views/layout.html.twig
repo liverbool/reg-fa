@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FA - Thailand</title>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    {% block sylius_stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/fathailandreg/css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/fathailandreg/css/skeleton.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/fathailandreg/css/form-collection.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/fathailandreg/css/main.css') }}">
+    {% endblock %}
+</head>
+<body>
+<div class="site">
+    <header class="header">
+        <div class="logo">
+            <a href="http://fathailand.org/">
+                <img src="http://fathailand.org/wp-content/uploads/2016/03/fatorth500exp2-new.png" alt="FA THAILAND">
+            </a>
+        </div>
+        <div class="desc">
+            <div class="title">FA THAILAND</div>
+            <div class="sub-title">สู่ศตวรรษที่ ๒ ฟุตบอลไทย</div>
+        </div>
+    </header>
+    <nav class="navigation">
+        <ul>
+            <li><a href="http://fathailand.org/">กลับสู่เว็บไซต์สมาคมฟุตบอลฯ</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        <div class="sponsors">
+            <a class="sponsor" href="http://changbeer.com/?lang=en" target="_blank"><img src="http://fathailand.org/wp-content/uploads/2016/02/sponsor1-300x300.png"></a>
+            <a class="sponsor" href="http://www.toyota.co.th/en/" target="_blank"><img src="http://fathailand.org/wp-content/uploads/2016/06/Untitled-1-300x105.png"></a>
+            <a class="sponsor" href="http://www.grandsport.com/web/index.php" target="_blank"><img src="http://fathailand.org/wp-content/uploads/2016/02/Untitled-1-300x225.png"></a>
+            <a class="sponsor" href="http://www.muangthaiinsurance.com/" target="_blank"><img src="http://fathailand.org/wp-content/uploads/2016/02/ss-300x296.png"></a>
+            <a class="sponsor" href="http://www.airasia.com/th/en/home.page" target="_blank"><img src="http://fathailand.org/wp-content/uploads/2016/02/sponsor3-1-300x300.png"></a>
+            <a class="sponsor" href="http://www.citibank.co.th/" target="_blank"><img src="http://fathailand.org/wp-content/uploads/2016/02/Untitled-3-300x300.png"></a>
+            <a class="sponsor" href="http://www.taokaenoi.co.th/" target="_blank"><img src="http://fathailand.org/wp-content/uploads/2016/06/TK_WHITE-284x300.png"></a>
+        </div>
+        <div class="contact">
+            <div class="contact-col">
+                <h6>สมาคมกีฬาฟุตบอลแห่งประเทศไทย<br>(ในพระบรมราชูปถัมภ์)</h6>
+                <p>19 อาคารพงษ์สุภี ชั้น9 <br>ถนนวิภาวดีรังสิต แขวงจอมพล <br>เขตจตุจักร กรุงเทพฯ 10900<br>อีเมล :
+                    secretariat@fathailand.org</p>
+            </div>
+            <div class="contact-col"></div>
+            <div class="contact-col"></div>
+        </div>
+    </footer>
+</div>
+{% block sylius_javascripts %}
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fathailandreg/js/form-collection.js') }}"></script>
+    <script type="text/javascript">
+        if (window['FileReader']) {
+            function readURL(input) {
+                var $input = $(input);
+                var $preview = $input.closest('.picture-upload').find('.picture-preview');
+
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $preview.attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $(document).on('change', 'input[type=file]', function () {
+                readURL(this);
+            });
+        }
+
+        $(document).on('change', 'select', function () {
+            var $el = $(this);
+            var $otherInput = $('#' + $el.closest('[data-other]').data('other'));
+            var $other = $otherInput.closest('.other');
+            $other.addClass('hidden');
+            $otherInput.val('');
+
+            if ($el.find('[data-is-other]').attr('value') == $el.val()) {
+                $other.removeClass('hidden');
+            }
+
+        });
+    </script>
+{% endblock %}
+</body>
+</html>

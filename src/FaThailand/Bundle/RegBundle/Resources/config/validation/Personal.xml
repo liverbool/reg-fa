@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
+                                        http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
+
+    <class name="FaThailand\Bundle\RegBundle\Model\Personal">
+        <property name="name">
+            <constraint name="NotBlank" >
+                <option name="message">กรุณาระบุชื่อนามสกุล</option>
+                <option name="groups">default</option>
+            </constraint>
+        </property>
+        <property name="tel">
+            <constraint name="NotBlank" >
+                <option name="message">กรุณาระบุหมายเลขติดต่อกลับ</option>
+                <option name="groups">default</option>
+            </constraint>
+        </property>
+        <property name="email">
+            <constraint name="NotBlank" >
+                <option name="message">กรุณาระบุอีเมล์</option>
+                <option name="groups">default</option>
+            </constraint>
+            <constraint name="Email" >
+                <option name="message">อีเมล์ไม่ถูกต้อง</option>
+                <option name="groups">default</option>
+            </constraint>
+        </property>
+        <property name="position">
+            <constraint name="NotBlank" >
+                <option name="message">กรุณาระบุตำแหน่ง</option>
+                <option name="groups">default</option>
+            </constraint>
+        </property>
+        <property name="picture1">
+            <constraint name="NotBlank" >
+                <option name="message">กรุณาใส่ภาพถ่าย</option>
+                <option name="groups">default</option>
+            </constraint>
+            <constraint name="Image" >
+                <option name="groups">default</option>
+            </constraint>
+        </property>
+        <property name="picture2">
+            <constraint name="NotBlank" >
+                <option name="message">กรุณาใส่หนังสือรับรองจากหน่วยงานต้นสังกัด</option>
+                <option name="groups">default</option>
+            </constraint>
+        </property>
+        <property name="picture3">
+            <constraint name="NotBlank" >
+                <option name="message">กรุณาใส่ภาพบัตรประจำตัวพนักงาน</option>
+                <option name="groups">default</option>
+            </constraint>
+        </property>
+    </class>
+</constraint-mapping>

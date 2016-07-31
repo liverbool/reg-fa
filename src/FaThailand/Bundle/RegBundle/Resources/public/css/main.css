@@ -1,0 +1,177 @@
+body {
+    background-color: #792026;
+    background-image: url("http://fathailand.org/wp-content/uploads/2016/02/backgeo3.jpg");
+    background-repeat: repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    font-size: 13px;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", sans-serif;
+    color: #222;
+}
+
+.site {
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    width: 1000px;
+    max-width: 93.75%;
+    margin: 24px auto 0;
+    position: relative;
+}
+
+.header {
+    background-image: url(http://fathailand.org/wp-content/uploads/2016/02/cropped-headerbg-1.jpg);
+    background-repeat: no-repeat;
+    margin-top: 0;
+    clear: both;
+    height: 150px;
+}
+
+.header .logo {
+    margin: -1rem 0;
+    width: 200px;
+    float: left;
+}
+
+.header .logo img {
+    display: block;
+    max-height: 150px;
+}
+
+.header .desc {
+    float: left;
+    padding-top: 2rem;
+}
+
+.header .title {
+    font-family: 'Work Sans';
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.header .sub-title {
+    color: #ffffff;
+    font-family: 'Kanit';
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.navigation {
+    clear: both;
+    background: #333;
+}
+
+.navigation ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.navigation ul li {
+    padding: .5rem 1rem;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    text-decoration: none;
+}
+
+.content {
+    background: #f1f1f1;
+    padding: 1rem;
+}
+
+.sponsors {
+    margin: 0 auto;
+    text-align: center;
+    background: #153a5f;
+    padding: 3rem 0;
+}
+
+.sponsors a {
+    padding-right: 1.5rem;
+}
+
+.sponsors img {
+    width: 85px;
+    vertical-align: middle;
+}
+
+.contact {
+    padding: 1rem;
+    background: #333;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-col {
+    width: 33.3%;
+}
+
+.contact-col strong {
+    font-size: 1.2rem;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    border-radius: 0;
+}
+
+.picture-upload {
+    border-bottom: 1px solid #D1D1D1;
+    margin-bottom: 10px;
+}
+
+.picture-preview {
+    width: 100%;
+    border: 2px dashed #ddd;
+}
+
+.required:after {
+    content: '*';
+    color: red;
+    margin-left: 2px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.press-heading {
+    border-bottom: 2px solid #E0E0E0;
+    margin-bottom: 5px;
+}
+
+.button-primary {
+    width: 100%;
+}
+
+.has-error .help-block {
+    color: red;
+}
+
+.has-error .help-block ul {
+    list-style: none;
+    margin: 0;
+}
+
+.alert.alert-danger {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}

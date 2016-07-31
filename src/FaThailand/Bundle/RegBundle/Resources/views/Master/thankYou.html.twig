@@ -1,0 +1,70 @@
+{% extends "FaThailandRegBundle::layout.html.twig" %}
+
+{% block content %}
+    <h5>ส่งข้อมูลเรียบร้อยแล้ว</h5>
+
+    <div class="row">
+        <div class="five columns">
+            <table class="u-full-width">
+                <tr>
+                    <th>หน่วยงาน</th>
+                    <td>{{ data.organize }}</td>
+                </tr>
+                <tr>
+                    <th>ที่อยู่</th>
+                    <td>{{ data.address }}</td>
+                </tr>
+                <tr>
+                    <th>เบอร์ติดต่อ</th>
+                    <td>{{ data.tel }}</td>
+                </tr>
+                <tr>
+                    <th>ประเภทของสื่อ</th>
+                    <td>
+                        {% if data.category.other %}
+                            {{ data.otherCategory }}
+                        {% else %}
+                            {{ data.category }}
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="seven columns">
+            <h6>รายชื่อผู้สื่อข่าว</h6>
+            <table class="u-full-width">
+                <thead>
+                <tr>
+                    <th>ชื่อ - นามสกุล</th>
+                    <th>ตำแหน่ง</th>
+                    <th>ติดต่อ</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for person in data.personals %}
+                    <tr>
+                        <td>{{ loop.index }}. {{ person.name }}</td>
+                        <td>
+                            {% if person.position.other %}
+                                {{ person.otherPosition }}
+                            {% else %}
+                                {{ person.position }}
+                            {% endif %}
+                        </td>
+                        <td>
+                            <strong>โทรศัพท์</strong> {{ person.tel }}<br>
+                            <strong>อีเมล</strong> {{ person.email }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="{{ person.picture1|imagine_filter('small') }}" title="รูปถ่าย"></td>
+                        <td><img src="{{ person.picture2|imagine_filter('small') }}" title="หนังสือรับรองจากหน่วยงานต้นสังกัด เพื่อยืนยันการส่งตัวเข้าทำข่าว"></td>
+                        <td><img src="{{ person.picture3|imagine_filter('small') }}" title="บัตรประจำตัวพนักงาน (จากหน่วยงานต้นสังกัด หรือ กรมประชาสัมพันธ์)"></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

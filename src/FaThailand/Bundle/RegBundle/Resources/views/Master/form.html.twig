@@ -1,0 +1,30 @@
+{% extends "FaThailandRegBundle::layout.html.twig" %}
+{% form_theme form "FaThailandRegBundle::form.html.twig" %}
+
+{% block content %}
+    <h3>ลงทะเบียนสื่อมวลชน เพื่อเข้าทำข่าวฟุตบอลโลก รอบคัดเลือก</h3>
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    <div class="row">
+        <div class="five columns">
+            {{ form_row(form.organize) }}
+            {{ form_row(form.address) }}
+            {{ form_row(form.tel) }}
+
+            <div data-other="{{ form.otherCategory.vars.id }}">
+                {{ form_row(form.category) }}
+            </div>
+
+            <div class="other {{ resource.category and resource.category.other ? '' : 'hidden' }}">
+                {{ form_row(form.otherCategory) }}
+            </div>
+
+            <button type="submit" class="button button-primary">Submit</button>
+        </div>
+        <div class="seven columns">
+            <div class="press-heading">{{ form_label(form.personals) }}</div>
+            {{ form_widget(form.personals) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock content %}

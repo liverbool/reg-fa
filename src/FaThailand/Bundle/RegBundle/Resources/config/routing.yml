@@ -1,0 +1,18 @@
+route_reg_master_form:
+    path: /registration
+    methods: [GET, POST]
+    defaults:
+        _controller: fa.controller.reg_master:registrationAction
+        _sylius:
+            permission: false
+            template: FaThailandRegBundle:Master:form.html.twig
+            redirect:
+                route: route_reg_master_thank_you
+                parameters:
+                    code: resource.code
+
+route_reg_master_thank_you:
+    path: /registration-thank-you/{code}
+    methods: [GET]
+    defaults:
+        _controller: fa.controller.reg_master:thankYouAction
